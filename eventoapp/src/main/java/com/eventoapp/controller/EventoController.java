@@ -1,5 +1,7 @@
 package com.eventoapp.controller;
 
+import javax.swing.JOptionPane;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,8 @@ import com.eventoapp.repository.EventoRepository;
 
 @Controller
 public class EventoController {
+	
+	
 	
 	@Autowired
 	private EventoRepository er;
@@ -37,11 +41,12 @@ public class EventoController {
 		return mv;
 	}
 	
-	@RequestMapping("/codigo")
-	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo) {
+	@RequestMapping("/evento")	
+	public ModelAndView detalhesEvento(@PathVariable("evento") long codigo) {
 		Evento evento = er.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("detalhesEventos");
 		mv.addObject("evento", evento);
+		System.out.println("evento" + evento);
 		return mv;
 	}
 
