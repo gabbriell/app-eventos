@@ -57,7 +57,7 @@ public class EventoController {
 	}
 	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)	
-	public String detalhesEvento(@PathVariable("codigo") long codigo, Convidado convidado) {
+	public String detalhesEvento(@PathVariable("codigo") long codigo, @Valid Convidado convidado) {
 		Evento evento = er.findByCodigo(codigo);
 		convidado.setEvento(evento);
 		cr.save(convidado);

@@ -3,11 +3,13 @@ package com.eventoapp.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import org.hibernate.validator.constraintvalidation;
 
 @Entity
 public class Convidado {
 	
 	@Id
+	@NotEmpty
 	private String cpf;
 	private String nomeConvidado;
 	private String telefone;
