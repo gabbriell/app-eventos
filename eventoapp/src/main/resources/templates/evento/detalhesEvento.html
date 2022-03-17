@@ -25,14 +25,16 @@
 			<p><span th:text="${evento.horario}"></span></p>
 		</div>
 		
+		<span>Cadastro de convidados:</span>
+		
 		<form method="post">
 		
 		<div class="row"> 
-		<div class="input-field col s6">
-			
+		<div class="input-field col s12">
+		
 			<form class="col s12">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s5">
           <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" type="text" class="validate" name="nomeConvidado">
           <label for="icon_prefix">Name: </label>
@@ -40,7 +42,7 @@
       </div>
       
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s5">
           <i class="material-icons prefix">phone</i>
           <input id="icon_telephone" type="tel" class="validate" name="telefone">
           <label for="icon_telephone">Telefone: </label>
@@ -48,21 +50,31 @@
       </div>
       
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s5">
           <i class="material-icons prefix">account_box</i>
           <input id="icon_telephone" type="tel" class="validate" name="cpf">
           <label for="icon_telephone">Cpf: </label>
         </div>
       </div>
       
-      <button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-    </form>
-			
-		
-		
-		
+      <button class="waves-effect waves-light btn" type="submit">Adicionar convidados</button>
+    </form>		
 	</div>
+	<h5>Lista de Convidados:</h5>
 	
+	<div class="container" th:each="convidado : ${convidados}">
+	
+		<div class="row">
+			<div class="input - field col s6">
+				<p><span th:text="${convidado.nomeConvidado}"></span>
+			</div>
+			<div class="input - field col s3">
+				<p><span th:text="${convidado.telefone}"></span>			
+			</div>
+		
+		</div>
+	
+	</div>
 	
   <div class="row">
     
