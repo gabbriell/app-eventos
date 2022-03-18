@@ -15,7 +15,19 @@
 </head>
 <body>
 
-<h1>Evento</h1>
+	<header>
+	   <nav class="nav-extended">
+	    <div class="nav-wrapper">
+	      <a href="#" class="brand-logo left">Evento</a>
+	      
+	       <ul id="nav-mobile" class="tab right hide-on">
+	        <li><a href="/eventos">Listar de eventos</a></li>
+	        <li><a href="/cadastrarEvento">Cadastro de eventos</a></li>
+	      </ul>
+	  	</nav>
+	</header>
+
+
 <a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">add_circle</i>Lista de eventos</a>
 	<div th:each="evento : ${evento}" class="container">
 		<div>
@@ -77,10 +89,13 @@
 	
 	</div>
 	
-  <div class="row">
-    
-  </div>
-        
+ 
+			<div class="footer-copyright">
+            <div class="container">
+            © 2022 - Gabriel Lima Martins
+            
+            </div>
+          </div>      
 	
 	
  <!--JavaScript at end of body for optimized loading-->
