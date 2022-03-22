@@ -65,6 +65,8 @@ public class EventoController {
 		return mv;
 	}
 	
+
+	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)	
 	public String detalhesEvento(@PathVariable("codigo") long codigo, @Valid Convidado convidado, BindingResult result, RedirectAttributes atributes) {
 		if(result.hasErrors()) {
